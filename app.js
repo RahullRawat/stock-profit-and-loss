@@ -28,6 +28,12 @@ function totalInitialPrice() {
 		output.innerText = "Please fill all the fields";
 	} else if (initialPrice.value === currentPrice.value) {
 		output.innerText = "NO GAIN";
+	} else if (
+		initialPrice.value < 1 ||
+		quantity.value < 1 ||
+		currentPrice.value < 1
+	) {
+		output.innerText = "Values should be greater than 0";
 	} else {
 		if (todayTotalPrice > totalPrice) {
 			output.innerText =
